@@ -5,9 +5,13 @@ window.onload = () => {
 
   inputs.forEach(input => {
     input.addEventListener("input", () => {
-      validarInput(input);
+      validarInput(input, false);
+      //esse false é relativo a mensagem de erro que ocorre nos campos (tratado em validar.js) fazendo com que só ocorra caso o usuario esteja clicando fora do campo//
     });
 
+    input.addEventListener('blur', () => {
+      validarInput(input);
+    })
   });
 
 };
